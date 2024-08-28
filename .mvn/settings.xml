@@ -1,0 +1,23 @@
+<settings>
+    <profiles>
+        <profile>
+            <id>publish</id>
+            <properties>
+                <altSnapshotDeploymentRepository>maven-snapshots::${env.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL}</altSnapshotDeploymentRepository>
+                <altReleaseDeploymentRepository>maven-releases::${env.RELEASE_DEPLOYMENT_REPOSITORY_URL}</altReleaseDeploymentRepository>
+            </properties>
+        </profile>
+    </profiles>
+    <servers>
+        <server>
+            <id>github</id>
+            <username>${env.GITHUB_ACTOR}</username>
+            <password>${env.GITHUB_TOKEN}</password>
+        </server>
+        <server>
+            <id>nexus</id>
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
+        </server>
+    </servers>
+</settings>
