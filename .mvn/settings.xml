@@ -2,6 +2,10 @@
     <profiles>
         <profile>
             <id>homelab</id>
+            <properties>
+                <altSnapshotDeploymentRepository>nexus-snapshot::${env.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL}</altSnapshotDeploymentRepository>
+                <altReleaseDeploymentRepository>nexus-release::${env.RELEASE_DEPLOYMENT_REPOSITORY_URL}</altReleaseDeploymentRepository>
+            </properties>
             <repositories>
                 <repository>
                     <id>nexus-snapshot</id>
