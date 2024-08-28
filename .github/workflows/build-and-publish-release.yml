@@ -36,7 +36,7 @@ jobs:
           RELEASE_DEPLOYMENT_REPOSITORY_URL: ${{ secrets.RELEASE_DEPLOYMENT_REPOSITORY_URL }}
         run: |
           mvn -X -B deploy \
-            -Daether.checksums.algorithms="MD5,SHA-1,SHA-256,SHA-512" \
+            -DcreateChecksum=true \
             -P publish \
             --settings=${{ github.workspace }}/.mvn/settings.xml
       - name: Finish release
