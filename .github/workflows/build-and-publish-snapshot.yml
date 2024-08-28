@@ -31,7 +31,9 @@ jobs:
           SNAPSHOT_DEPLOYMENT_REPOSITORY_URL: ${{ secrets.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL }}
           RELEASE_DEPLOYMENT_REPOSITORY_URL: ${{ secrets.RELEASE_DEPLOYMENT_REPOSITORY_URL }}
         run: |
-          mvn -X -B deploy -P publish \
+          mvn -X -B deploy \
+            -Daether.checksums.algorithms="MD5,SHA-1,SHA-256,SHA-512" \
+            -P publish \
             --settings=${{ github.workspace }}/.mvn/settings.xml
       - uses: actions/upload-artifact@v3.1.3
         if: always()
