@@ -36,7 +36,6 @@ jobs:
           RELEASE_DEPLOYMENT_REPOSITORY_URL: ${{ secrets.RELEASE_DEPLOYMENT_REPOSITORY_URL }}
         run: |
           mvn -X -B deploy \
-            -DcreateChecksum=true \
             -P publish \
             --settings=${{ github.workspace }}/.mvn/settings.xml
       - name: Finish release
