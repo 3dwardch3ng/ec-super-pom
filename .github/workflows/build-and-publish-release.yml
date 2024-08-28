@@ -36,7 +36,8 @@ jobs:
           RELEASE_DEPLOYMENT_REPOSITORY_URL: ${{ secrets.RELEASE_DEPLOYMENT_REPOSITORY_URL }}
         run: |
           mvn -X -B deploy \
-            -P home-lab \
+            -P homelab \
+            -Dmaven.artifact.threads=1 \ 
             --settings=${{ github.workspace }}/.mvn/settings.xml
       - name: Finish release
         run: mvn gitflow:release-finish -B -DpushRemote=true -DallowSnapshots=true
