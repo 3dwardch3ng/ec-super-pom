@@ -2,18 +2,39 @@
     <profiles>
         <profile>
             <id>homelab</id>
-            <properties>
-                <altSnapshotDeploymentRepository>${env.DEPLOYMENT_REPOSITORY_ID}::${env.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL}</altSnapshotDeploymentRepository>
-                <altReleaseDeploymentRepository>${env.DEPLOYMENT_REPOSITORY_ID}::${env.RELEASE_DEPLOYMENT_REPOSITORY_URL}</altReleaseDeploymentRepository>
-            </properties>
+            <repositories>
+                <repository>
+                    <id>nexus-snapshot</id>
+                    <name>Home Lab Nexus Snapshot</name>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <url>${env.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL}</url>
+                    <layout>default</layout>
+                </repository>
+                <repository>
+                    <id>nexus-release</id>
+                    <name>Home Lab Nexus Release</name>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <url>${env.RELEASE_DEPLOYMENT_REPOSITORY_URL}</url>
+                    <layout>default</layout>
+                </repository>
+            </repositories>
         </profile>
     </profiles>
     <servers>
-        <server>
-            <id>github</id>
-            <username>${env.GITHUB_ACTOR}</username>
-            <password>${env.GITHUB_TOKEN}</password>
-        </server>
         <server>
             <id>nexus</id>
             <username>${env.NEXUS_USERNAME}</username>
