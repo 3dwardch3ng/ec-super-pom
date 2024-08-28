@@ -3,8 +3,8 @@
         <profile>
             <id>publish</id>
             <properties>
-                <altSnapshotDeploymentRepository>${env.DEPLOYMENT_REPOSITORY_ID}::${env.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL}</altSnapshotDeploymentRepository>
-                <altReleaseDeploymentRepository>${env.DEPLOYMENT_REPOSITORY_ID}::${env.RELEASE_DEPLOYMENT_REPOSITORY_URL}</altReleaseDeploymentRepository>
+                <altSnapshotDeploymentRepository>nexus::${env.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL}</altSnapshotDeploymentRepository>
+                <altReleaseDeploymentRepository>nexus::${env.RELEASE_DEPLOYMENT_REPOSITORY_URL}</altReleaseDeploymentRepository>
             </properties>
         </profile>
     </profiles>
