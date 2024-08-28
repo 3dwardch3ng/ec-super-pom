@@ -37,7 +37,6 @@ jobs:
         run: |
           mvn -X -B deploy \
             -P homelab \
-            -Dmaven.artifact.threads=1 \ 
             --settings=${{ github.workspace }}/.mvn/settings.xml
       - name: Finish release
         run: mvn gitflow:release-finish -B -DpushRemote=true -DallowSnapshots=true

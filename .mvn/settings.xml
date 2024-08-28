@@ -2,46 +2,15 @@
     <profiles>
         <profile>
             <id>homelab</id>
-            <repositories>
-                <repository>
-                    <id>nexus-snapshot</id>
-                    <name>Home Lab Nexus Snapshot</name>
-                    <releases>
-                        <enabled>false</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </snapshots>
-                    <url>${env.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL}</url>
-                    <layout>default</layout>
-                </repository>
-                <repository>
-                    <id>nexus-release</id>
-                    <name>Home Lab Nexus Release</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <url>${env.RELEASE_DEPLOYMENT_REPOSITORY_URL}</url>
-                    <layout>default</layout>
-                </repository>
-            </repositories>
+            <properties>
+                <altSnapshotDeploymentRepository>${env.DEPLOYMENT_REPOSITORY_ID}::${env.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL}</altSnapshotDeploymentRepository>
+                <altReleaseDeploymentRepository>${env.DEPLOYMENT_REPOSITORY_ID}::${env.RELEASE_DEPLOYMENT_REPOSITORY_URL}</altReleaseDeploymentRepository>
+            </properties>
         </profile>
     </profiles>
     <servers>
         <server>
-            <id>nexus-snapshot</id>
-            <username>${env.NEXUS_USERNAME}</username>
-            <password>${env.NEXUS_PASSWORD}</password>
-        </server>
-        <server>
-            <id>nexus-release</id>
+            <id>nexus</id>
             <username>${env.NEXUS_USERNAME}</username>
             <password>${env.NEXUS_PASSWORD}</password>
         </server>
