@@ -36,7 +36,7 @@ jobs:
           RELEASE_DEPLOYMENT_REPOSITORY_URL: ${{ secrets.RELEASE_DEPLOYMENT_REPOSITORY_URL }}
         run: |
           mvn -X -B deploy \
-            -P publish \
+            -P homelab \
             --settings=${{ github.workspace }}/.mvn/settings.xml
       - name: Finish release
         run: mvn gitflow:release-finish -B -DpushRemote=true -DallowSnapshots=true
