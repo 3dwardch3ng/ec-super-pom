@@ -8,16 +8,6 @@
             </properties>
             <repositories>
                 <repository>
-                    <id>nexus-central</id>
-                    <name>Home Lab Nexus Maven Central</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </releases>
-                    <url>${env.NEXUS_CENTRAL_REPOSITORY_URL}</url>
-                    <layout>default</layout>
-                </repository>
-                <repository>
                     <id>nexus-snapshot</id>
                     <name>Home Lab Nexus Snapshot</name>
                     <releases>
@@ -46,6 +36,18 @@
                     <layout>default</layout>
                 </repository>
             </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>nexus-central</id>
+                    <name>Home Lab Nexus Maven Central</name>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <url>${env.NEXUS_CENTRAL_REPOSITORY_URL}</url>
+                    <layout>default</layout>
+                </pluginRepository>
+            </pluginRepositories>
         </profile>
     </profiles>
     <servers>
