@@ -35,7 +35,7 @@ jobs:
           SNAPSHOT_DEPLOYMENT_REPOSITORY_URL: ${{ secrets.SNAPSHOT_DEPLOYMENT_REPOSITORY_URL }}
           RELEASE_DEPLOYMENT_REPOSITORY_URL: ${{ secrets.RELEASE_DEPLOYMENT_REPOSITORY_URL }}
         run: |
-          mvn -X -B deploy \
+          mvn -B deploy \
             -P homelab \
             --settings=${{ github.workspace }}/.mvn/settings.xml
       - name: Finish release
@@ -43,8 +43,3 @@ jobs:
         env:
           GITHUB_ACTOR: 3dwardch3ng
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      - uses: actions/upload-artifact@v3.1.3
-        if: always()
-        with:
-          name: Java Artifacts
-          path: ${{ github.workspace }}/**/target/*.*
