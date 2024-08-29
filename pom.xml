@@ -234,6 +234,12 @@
                     <groupId>com.amashchenko.maven.plugin</groupId>
                     <artifactId>gitflow-maven-plugin</artifactId>
                     <version>${gitflow-maven-plugin.version}</version>
+                    <configuration>
+                        <gitFlowConfig>
+                            <productionBranch>main</productionBranch>
+                            <developmentBranch>develop</developmentBranch>
+                        </gitFlowConfig>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

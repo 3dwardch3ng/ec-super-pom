@@ -48,12 +48,6 @@
                     <layout>default</layout>
                 </pluginRepository>
             </pluginRepositories>
-            <configuration>
-                <gitFlowConfig>
-                    <productionBranch>main</productionBranch>
-                    <developmentBranch>develop</developmentBranch>
-                </gitFlowConfig>
-            </configuration>
         </profile>
     </profiles>
     <servers>
