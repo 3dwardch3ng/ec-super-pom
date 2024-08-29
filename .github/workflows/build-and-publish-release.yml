@@ -42,7 +42,7 @@ jobs:
             -P homelab \
             --settings=${{ github.workspace }}/.mvn/settings.xml
       - name: Finish release
-        run: mvn gitflow:release-finish -B -DpushRemote=true -DallowSnapshots=true -DproductionBranch=main
+        run: mvn gitflow:release-finish -B -DpushRemote=true -DallowSnapshots=true
         env:
           GITHUB_ACTOR: 3dwardch3ng
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
