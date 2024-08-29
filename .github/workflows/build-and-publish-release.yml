@@ -1,6 +1,9 @@
 name: RELEASE - Build and Publish
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build-and-publish:
