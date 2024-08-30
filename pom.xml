@@ -6,7 +6,7 @@
 
     <groupId>sydney.cheng</groupId>
     <artifactId>ec-super-pom</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ec-super-pom</name>
 
@@ -238,8 +238,21 @@
                         <gitFlowConfig>
                             <productionBranch>main</productionBranch>
                             <developmentBranch>develop</developmentBranch>
+                            <featureBranchPrefix>feature/</featureBranchPrefix>
+                            <releaseBranchPrefix>release/</releaseBranchPrefix>
+                            <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
                         </gitFlowConfig>
+                        <commitMessages>
+                            <releaseFinishMergeMessage>[RELEASE] @{version}</releaseFinishMergeMessage>
+                            <hotfixFinishMessage>Update for next development version [skip ci]</hotfixFinishMessage>
+                            <releaseFinishMessage>Update for next development version [skip ci]</releaseFinishMessage>
+                            <releaseVersionUpdateMessage>Update for next development version [skip ci]</releaseVersionUpdateMessage>
+                        </commitMessages>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
                 </plugin>
             </plugins>
         </pluginManagement>
