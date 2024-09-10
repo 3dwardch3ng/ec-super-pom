@@ -6,7 +6,7 @@
 
     <groupId>sydney.cheng</groupId>
     <artifactId>ec-super-pom</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ec-super-pom</name>
 
@@ -67,6 +67,7 @@
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <gitflow-maven-plugin.version>1.21.0</gitflow-maven-plugin.version>
+        <jjwt.version>0.12.6</jjwt.version>
         <!-- Sonar Properties -->
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
@@ -104,6 +105,22 @@
                 <version>${jtokkit.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- JWT Tokens -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
             <!-- Testing -->
             <dependency>
