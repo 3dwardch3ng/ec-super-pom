@@ -36,7 +36,7 @@
 
     <properties>
         <!-- Dependencies -->
-        <spring-boot-dependencies.version>3.3.5</spring-boot-dependencies.version>
+        <spring-boot-dependencies.version>3.4.0</spring-boot-dependencies.version>
         <spring-cloud-dependencies.version>2023.0.3</spring-cloud-dependencies.version>
         <json.version>20240303</json.version>
         <jtokkit.version>1.1.0</jtokkit.version>
@@ -62,7 +62,7 @@
         <maven-project-info-reports-plugin.version>3.8.0</maven-project-info-reports-plugin.version>
         <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
-        <spring-boot-maven-plugin.version>3.3.5</spring-boot-maven-plugin.version>
+        <spring-boot-maven-plugin.version>3.4.0</spring-boot-maven-plugin.version>
         <sonar-maven-plugin.version>5.0.0.4389</sonar-maven-plugin.version>
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
