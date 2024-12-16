@@ -41,7 +41,7 @@
         <json.version>20240303</json.version>
         <jtokkit.version>1.1.0</jtokkit.version>
         <!-- Testing Dependencies -->
-        <junit-bom.version>5.11.3</junit-bom.version>
+        <junit-bom.version>5.11.4</junit-bom.version>
         <mockito-bom.version>5.14.2</mockito-bom.version>
         <!-- Maven Plugins -->
         <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
