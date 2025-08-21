@@ -67,7 +67,7 @@
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <gitflow-maven-plugin.version>1.21.0</gitflow-maven-plugin.version>
-        <jjwt.version>0.12.6</jjwt.version>
+        <jjwt.version>0.13.0</jjwt.version>
         <!-- Sonar Properties -->
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
